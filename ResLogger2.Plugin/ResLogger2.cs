@@ -160,12 +160,12 @@ public class ResLogger2 : IDalamudPlugin
 
             var argv = args.Split(' ');
 
-            if (argv.Length == 1)
+            if (argv.Length == 0) {
+                LogWindow.Toggle()
+            }
+            else if (argv.Length == 1)
             {
-                if (argv[0] == "")
-                {
-                    LogWindow.Toggle();
-                } else if (argv[0] == "stats")
+                if (argv[0] == "stats")
                 {
                     StatsWindow.Toggle();
                 } else if (argv[0] == "help")
